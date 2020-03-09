@@ -534,4 +534,50 @@ git commit -am  "commit message"
 ![push image](./images/md/git-commit-5.png)
 
 
+# Git UI
+
+<p dir="rtl" align="right">
+در بعضی مواقع دوست دارید به جای استفاده از محیط CLI از واسط گرافیکی یا به اصطلاح wizard برای کارهای مختلف استفاده کنید بدین منظور دستور زیر را در محیط  cli تایپ کرده تا پنجره گرافیکی گیت برای شما باز گردد.
+</p>
+
+```
+git gui 
+```
+
+![push image](./images/md/ui.png)
+
+
+<p dir="rtl" align="right">
+برای مشاهده لیست تغییرات (افزوده شده ها ، تغییر کرده ها و حذف شده ها) در ویزارد از منوی بالا قسمت <b>commit</b> و سپس قسمت <b>Rescan</b> را انتخاب می کنیم.
+</p>
+
+![push image](./images/md/ui-3.png)
+
+<p dir="rtl" align="right">
+حال لیست فایل های تغییر یافته در قسمت </b>“Unstaged Changes“<b> قرار می گیرند مطابق با شکل زیر.(با کلیک روی هر فایل می توان تغییرات آنرا در روبه روی آن نیز دید.
+</p>
+
+![push image](./images/md/ui-4.png)
+
+<p dir="rtl" align="right">
+در مرحله بعدی برای انتقال لیست فایل ها از </b>stage<b> به repository (commit) باید مطابق شکل زیر از منو و قسمت commit قسمت <b>Stage To Commit</b> را انتخاب کنید.
+</p>
+
+![push image](./images/md/ui-5.png)
+
+<p dir="rtl" align="right">
+همانطور که در شکل زیر ملاحظه می کنید فایل ها در مخزن محلی قرار گرفته اند و بعد از تایپ یک پیغام برای commit روی دکمه کلیک می کنیم تا فرایند ذخیره در مخزن محلی نیز انجام گیرد.  بعد از آن و با کلیک روی دکمه push نیز امکان ذخیره فایل ها در مخزن ریموت فراهم می شود.
+</p>
+
+![push image](./images/md/ui-6.png)
+
+<p dir="rtl" align="right">
+ کلیک روی دکمه push و باز شدن ویزارد آن و انتخاب مخزن (اینجا master) فایل ها در مخزن اصلی نیز ذخیره می گردند. مطابق 2 شکل رو به رو
+</p>
+
+![push image](./images/md/ui-7.png)
+
+![push image](./images/md/ui-8.png)
+
+
 
