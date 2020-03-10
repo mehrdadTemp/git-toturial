@@ -580,4 +580,164 @@ git gui
 ![push image](./images/md/ui-8.png)
 
 
+# branch
+
+<p dir="rtl" align="right">
+جهت ساخت یک شاخه (<b>branch</b>) جدید در پروژه روش های مختلفی وجود دارد. می توان با اجرای دستور زیر یک شاخه ساخت (بدون ورود به شاخه جدید). در دستور زیر <b>branch1</b> نام شاخه می باشد. و می تواند هر نامی داشته باشد.
+</p> 
+
+```
+git branch branch1
+```
+
+![push image](./images/md/git-branch-1.png)
+
+<p dir="rtl" align="right">
+حال برای ورود به <b>شاخه</b> جدید باید از دستور <b>checkout</b> استفاده شود مطابق دستور و شکل زیر.
+</p>
+
+```
+git checkout branch1
+```
+
+![push image](./images/md/git-branch-2.png)
+
+<p dir="rtl" align="right">
+بعد از ورود به شاخه با اجرای دستور <b>merge</b> می توان شاخه فوق را به روز کرد. <b>البته اگه شاخه جدید باشد</b> نیازی به این کار نیست زیرا شاخه جدید ایجاد شده است.
+</p>
+
+![push image](./images/md/git-branch-3.png)
+
+<p dir="rtl" align="right">
+حال با <b>push</b> کردن این شاخه جدید آنرا درمخزن remote هم ایجاد می کنیم مطابق 2 شکل زیر.
+</p>
+
+![push image](./images/md/git-branch-4.png)
+
+![push image](./images/md/git-branch-5.png)
+
+<p dir="rtl" align="right">
+برای ایجاد یک شاخه و رفتن به داخل آن به فرم مستقیم از سوییچ <b>–b</b> در دستور chekout استفاده می شود. به دستور زیر توجه کنین که شاخه جدیدی به نام branch2 ایجاد کرده و بلافاصله به داخل آن می رویم.
+</p>
+
+
+```
+git checkout -b branch2
+```
+
+![push image](./images/md/git-branch-6.png)
+
+
+### نکته
+
+<p dir="rtl" align="right">
+برای حذف یک شاخه از سوییچ <b>–d</b> استفاده می شود مطابق شکل زیر که شاخه branch1 در آن حذف گردیده است.
+</p>
+
+```
+git branch -d branch1
+```
+
+![push image](./images/md/git-branch-7.png)
+
+### نکته
+
+<p dir="rtl" align="right">
+برای حذف یک شاخه که هنوز داخل آن merge اتفاق نیوفتاده است دقیقا مثل branch2 برای حذف از سوییچ <b>–D</b> استفاده می شود مطابق شکل زیر که شاخه branch2 در آن حذف گردیده است.
+</p>
+
+```
+git checkout master
+git branch -D branch2
+```
+
+# بررسی یک مثال
+
+<p dir="rtl" align="right">
+فرض کنید مطابق شکل زیر ما در شاخه اصلی (master) هستیم. و در حال حاضر در commit با نام c2 قرار داریم.
+</p>
+
+![push image](./images/md/sample-1.png)
+
+<p dir="rtl" align="right">
+حال شاخه ای با نام branch1 را ساخته و وارد آن شاخه می شویم.
+</p>
+
+```
+git checkout -b branch1
+```
+
+![push image](./images/md/sample-2.png)
+
+<p dir="rtl" align="right">
+در شاخه branch1 اقدام به ایجاد یک فایل جدید به نام index.html کرده و commit می کنیم. (رفتن به مرحله c3 در شاخه branch1) و شاخه master در همان commit شماره c2 می ماند.
+</p>
+
+```
+vim  index.html
+git commit -a -m "generate index.html in branch1"
+```
+
+![push image](./images/md/sample-3.png)
+
+<p dir="rtl" align="right">
+حال دوباره به شاخه اصلی (master) بازگشته و اقدام به ایجاد یک شاخه جدید دیگری به نام branch2 می کنیم. و در داخل این شاخه فایل جدیدی به نام index.html کرده و آنرا هم commit می کنیم.
+</p>
+
+```
+git checkout master
+git checkout -b branch2
+vim index.html
+git commit -a -m "generate new index.html"
+```
+
+![push image](./images/md/sample-4.png)
+
+<p dir="rtl" align="right">
+حال به شاخه اصلی (master) بازگشته و با شاخه branch2 ادغام (merge) می کنیم مطابق با شکل زیر
+</p>
+
+```
+git checkout master
+git merge branch2
+```
+
+![push image](./images/md/sample-5.png)
+
+<p dir="rtl" align="right">
+حال اقدام به حذف شاخه branch2 کرده و سپس دوباره به شاخه branch1 بازگشته و فایل index.html را ویرایش کرده و سپس commit  می کنیم (تولید commit جدیدی با نام c5)
+</p>
+
+```
+git branch -d  branch2
+git checkout branch1
+vim index.html
+git commit -a -m "modify index.html"
+```
+
+![push image](./images/md/sample-6.png)
+
+<p dir="rtl" align="right">
+حال به شاخه master بازگشته و این شاخه را با شاخه branch1 ادغام می کنیم. در صورت بروز conflict باید ابتدا مشکلات رفع گردد و سپس بعد رفع کردن مشکلات فایل را commit  کنیم (ایجاد حالت c6)
+</p>
+
+```
+git checkout master
+git merge branch1
+#  if occur conflicted here first fixed 
+git commit -a -m "merge and commit"
+```
+
+![push image](./images/md/sample-7.png)
+
+<p dir="rtl" align="right">
+در نهایت نیز اقدام به حذف شاخه branch1 می کنیم.
+</p>
+
+```
+git branch -d branch1
+```
+
+![push image](./images/md/sample-8.png)
+
 
