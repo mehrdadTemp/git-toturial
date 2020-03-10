@@ -308,6 +308,17 @@ git checkout -b  mehrdad
 
 ![push image](./images/md/git-merge-1.png)
 
+### نکته
+
+<p dir="rtl" align="right">
+برای برگشت سریع به شاخه قبلی از دستور زیر استفاده گردد.
+</p>
+
+```
+git checkout -
+```
+
+
 <p dir="rtl" align="right">
 رفتن به یک شاخه دیگر در گیت
 برای جابجایی از یک شاخه به شاخه دیگر کافی است از دستور git checkout به همراه نام branch مربوطه استفاده کنیم.
@@ -670,7 +681,7 @@ git checkout -b branch1
 ![push image](./images/md/sample-2.png)
 
 <p dir="rtl" align="right">
-در شاخه branch1 اقدام به ایجاد یک فایل جدید به نام index.html کرده و commit می کنیم. (رفتن به مرحله c3 در شاخه branch1) و شاخه master در همان commit شماره c2 می ماند.
+در شاخه branch1 اقدام به ویرایش یک فایل به نام index.html کرده و commit می کنیم. (رفتن به مرحله c3 در شاخه branch1) و شاخه master در همان commit شماره c2 می ماند.
 </p>
 
 ```
@@ -681,7 +692,7 @@ git commit -a -m "generate index.html in branch1"
 ![push image](./images/md/sample-3.png)
 
 <p dir="rtl" align="right">
-حال دوباره به شاخه اصلی (master) بازگشته و اقدام به ایجاد یک شاخه جدید دیگری به نام branch2 می کنیم. و در داخل این شاخه فایل جدیدی به نام index.html کرده و آنرا هم commit می کنیم.
+حال دوباره به شاخه اصلی (master) بازگشته و اقدام به ایجاد یک شاخه جدید دیگری به نام branch2 می کنیم. و در داخل این شاخه اقدام به ویرایش فایل index.html کرده و آنرا هم commit می کنیم.
 </p>
 
 ```
@@ -739,5 +750,154 @@ git branch -d branch1
 ```
 
 ![push image](./images/md/sample-8.png)
+
+
+# gitk   vs  git gui
+
+## مزایای git gui
+1. راحتی در commit
+2. امکان merge ، push و pull
+
+## مزایای gitk
+1. نمایش تاریخچه و درخت git
+
+
+![push image](./images/md/gitk.png)
+
+![push image](./images/md/git-gui.png)
+
+### نکته
+
+<p dir="rtl" align="right">
+با زدن دستور git gui دیگر محیط خط فرمان (cli) قابل استفاده نیست و تا بستن ویزارد قفل می شود برای باز کردن ویزارد در یک نخ (thread)  جدا از دستور زیر استفاده کنید.
+</p>
+
+```
+git-gui
+```
+
+
+# اسم مستعار
+
+<p dir="rtl" align="right">
+در گیت نیز امکان تعریف اسم مستعار (alias) نیز وجود دارد. جهت ذخیره این اسم مستعار در کل ماشین کاربر از سوییچ –qlobal استفاده می شود. این نام ها درفایل مشخصی با نام .gitconfig قرار می گیرند که در ویندوز در مسیر %USERPROFILE%\.gitconfig و در سیستم عامل لینوکس در مسیر $HOME/.gitconfig قرار می گیرد. شما می توانید این فایل را باز کرده و به طور دستی مقادیر داخل آن را ویرایش کنید. ولی بهتر است با استفاده از دستور زیر اقدام به ویرایش این فایل کنید.
+</p>
+
+```
+git config --global aliasName "git command name"
+```
+
+<p dir="rtl" align="right">
+برای تعریف یک نام و ایمیل برای خود در git مشابه زیر دستورات را وارد کنید.
+</p>
+
+```
+git config --global user.name  "Mehrdad Salehi"
+git config --global user.email mehrdad.temp@gmail.com
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+حال فرض کنید می خواهیم به جای دستور commit فقط 2 کلمه co را تایپ کنیم و همینطور به جای دستور checkout از 2 حرف ch استفاده کنیم. برای این منظور از دستور زیر استفاده می کنیم.
+</p>
+
+```
+git config --global alias.co "commit"
+git config --global alias.ch "checkout"	
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+البته می شود در فایل .gitconfig هم  به فرم زیر این دستورات را اضافه کرد
+</p>
+
+
+```
+[alias]
+    co = commit
+    ch = checkout
+```
+
+<p dir="rtl" align="right">
+حال برای تست به مثال زیر توجه کنید
+</p>
+
+```
+git co -m "insert new file"
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+البته می شود از دستورات هم در اینجا استفاده کرد به عنوان مثال برای خارج کردن فایل ها از stage می شود از خلاصه ساز زیر استفاده کرد.
+</p>
+
+```
+git config --global alias.unstage "reset --"
+```
+
+<p dir="rtl" align="right">
+مثال
+</p>
+
+```
+git unstage
+```
+
+# rebase 
+
+# pull
+
+<p dir="rtl" align="right">
+در حقیقت وظیفه این دستور گرفتن تغییرات از مخزن راهدور (remote repository) و انتقال آن به مخزن محلی می باشد. مطابق با دستور زیر. (این دستور تغریبا معادل با دستور update در SVN می باشد.
+</p>
+
+```
+git pull
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+البته می توان از 2 دستور زیر نیز که مشابه دستور pull هستند استفاده کرد.
+</p>
+
+```
+git fetch 
+git merge FETCH_HEAD
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+به طور دقیق تر ، pull ، سر شاخه بازیابی شده را به شاخه فعلی ادغام کند. با استفاده از سوییچ --rebase ، به جای ادغام git ، بازگرداندن (rebase)  git را اجرا می کند.
+</p>
+
+
+
+# rm
+
+<p dir="rtl" align="right">
+این دستور برای حذف فایل ها از درخت جاری در گیت استفاده می شود. در نمونه زیر مشاهده می شود که 3 فایل به طور همزمان از مخزن محلی حذف شدند.
+</p>
+
+```
+git rm package{2..4}.py
+```
+
+![git remove file image](./images/md/git-rm.png)
+
+### نکته
+
+<p dir="rtl" align="right">
+برای حذف یک پوشه نیز از سوییچ –r  استفادی می گردد به عنوان مثال اگر در مخزن خود پوشه ای با نام newFolder دارید برای حذف آن از دستور زیر استفاده گردد.
+</p>
+
+```
+git rm -r --cached newFolder
+```
+
 
 
