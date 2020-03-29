@@ -1209,4 +1209,27 @@ git push
 
 ![git remove file image](./images/md/rebase-13.jpg)
 
+<h3>
+<p dir="rtl" align="right">
+یکسری از دستورات کاربردی در گیت
+</p>
+</h3>
+
+
+No | دستور  |  توضیحات |  تصویر
+------------ | ------------- | ------------ | -------------
+1 | ```git diff```  |  <p dir="rtl" align="right">با این دستور می‌توانید همه تغییرات فایل را به صورت محلی مشاهده کنید. یک نام فایل می‌تواند به آن الحاق شود تا تغییراتی را برای یک فایل نمایش دهد.</p> | ![git remove file image](./images/md/best-commands-1.jpg) 
+2 | ```git blame my_file``` | <p dir="rtl" align="right">با این دستور می‌بینید که چه کسی چه چیزی را در my_file(اسم یک فایل خاص) تغییر داده است.</p>  |  ![git remove file image](./images/md/best-commands-2.jpg)
+3 | ```git reflog``` | <p dir="rtl" align="right">سابقه‌ای از تغییراتی که در Head مخزن محلی صورت گرفته است را نمایش می‌دهد. این دستور برای یافتن موارد حذف شده مفید است.</p> | ![git remove file image](./images/md/best-commands-3.jpg)
+4 | ```git config --global core.editor "atom --wait"``` |  <p dir="rtl" align="right">برای این که اصلا وارد ویرایشگر Vim نشوید، می‌توانید ویرایشگر پیش‌فرض خود را در Git تغییر دهید. برای نمونه برای تغییر ویرایشگر پیش‌فرض به Atom می‌توانید از دستور زیر استفاده کنید:</p> |  <span></span>
+5 | ```git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"``` |  <p dir="rtl" align="right">برای تعریف notepad++ به عنوان ادیتور پیش فرض به جای vim از دستور زیر استفاده کنید</p> |  <span></span>
+5 | ```git diff branch1...branch2``` <br /> ```git diff branch1:file1  branch2:file1``` | <p dir="rtl" align="right">برای گرفتن اختلاف بین 2 شاخه مثلا master و mehrdad از کدی شبیه  ```git diff master…mehrdad``` استفاده می کنیم. (بین 2 نام شاخه 3 عدد نقطه قرار می دهیم). و برای گرفتن تفاوت بین یک فایل مشخص در 2 شاخه از علامت :  بین نام شاخه و نام فایل استفاده می شود (branch_name:file_name) . فرض کنید فایلی به نام main.py داریم حال برای مشاهده اختلاف از دستور ```git diff master:main.py  mehrdad:main.py``` استفاده می شود.</p> | ![git remove file image](./images/md/best-commands-4.jpg) 
+
+
+git rev-parse –abbrev-rev HEAD
+
+# Conflict
+
+
+
 
