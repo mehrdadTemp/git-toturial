@@ -897,7 +897,143 @@ git rm package{2..4}.py
 
 ```
 git rm -r --cached newFolder
+```  
+
+
+
+
+# rebase
+
+
+1
+
+![git remove file image](./images/md/rebase-1.jpg)
+
+<p dir="rtl" align="right">
+حال کلیه اطلاعات را از مخزن اصلی در مخزن محلی بارگیری می کنیم با استفاده از دستور زیر
+</p>
+
+```
+git pull
 ```
 
+![git remove file image](./images/md/rebase-2.jpg)
+
+<p dir="rtl" align="right">
+حال شاخه جدیدی در مخزن محلی با نام rebase-branch مطابق دستور زیر ایجاد می کنیم
+</p>
+
+```
+git checkout –b rebase-branch
+```
+
+![git remove file image](./images/md/rebase-3.jpg)
+
+<p dir="rtl" align="right">
+حال اقدام به commit می کنیم
+</p>
+
+<p dir="rtl" align="right">
+همانطور که در شکل یر مشخص می شود یک state جدید ایجاد می شود
+</p>
+
+```
+git commit –m ‘add new features’
+```
+
+![git remove file image](./images/md/rebase-4.jpg)
+
+
+<p dir="rtl" align="right">
+حال فایل جدیدی به نام مثلا index.html را در پروژه اضافه می کنیم و در همین شاخه جدید آنرا commit می کنیم مطابق با دستورات و شکل زیر
+</p>
+
+
+```
+git add index.html
+git commit –m ‘add index.html’
+```
+
+![git remove file image](./images/md/rebase-5.jpg)
+
+<p dir="rtl" align="right">
+حال فرض کنید در مخزن ریموت اصلی تغییر جدیدی داشتیم مطابق شکل زیر که یک گام به آن اضافه شده است.
+</p>
+
+![git remove file image](./images/md/rebase-6.jpg)
+
+<p dir="rtl" align="right">
+حالا دوباره به شاخه master بازگشته 
+</p>
+
+```
+git checkout master
+```
+
+![git remove file image](./images/md/rebase-7.jpg)
+
+<p dir="rtl" align="right">
+و اقدام به دریافت تغییرات جدید از مخزن ریموت مطابق دستور و شکل زیر می کنیم.
+</p>
+
+```
+git pull
+```
+
+![git remove file image](./images/md/rebase-8.jpg)
+
+<p dir="rtl" align="right">
+حال دوباره به شاخه rebase-branch باز می گردیم
+</p>
+
+```
+git checkout rebase-branch
+```
+
+![git remove file image](./images/md/rebase-9.jpg)
+
+<p dir="rtl" align="right">
+حال با اجرای دستور rebase مطابق دستور زیر ما به آخرین تغییرات در شاخه اصلی می رویم و تغییرات شاخه جاری یعنی rebase-branch را بعد از آخرین تغییرات در شاخه master قرار می دهیم
+</p>
+
+```
+git rebase master
+```
+
+![git remove file image](./images/md/rebase-10.jpg)
+
+<p dir="rtl" align="right">
+حال به شاخه master باز می گردیم
+</p>
+
+```
+git checkout master
+```
+
+![git remove file image](./images/md/rebase-11.jpg)
+
+<p dir="rtl" align="right">
+حالا با اجرای مجدد دستور rebase مطابق کد زیر تغیرات شاخه rebase-branch در ادامه تغییرات ما در شاخه master قرار می گیرد.
+</p>
+
+<p dir="rtl" align="right">
+حال اگر مشکلی در شاخه ایجاد شد آنرا رفع کرده و نسخه را به اصطلاح stable می کنیم.
+</p>
+
+```
+git rebase rebase-branch
+```
+
+![git remove file image](./images/md/rebase-12.jpg)
+
+<p dir="rtl" align="right">
+در نهایت تغییرات را در شاخه اصلی هم قرار می دهیم.
+</p>
+
+```
+git push
+```
+
+![git remove file image](./images/md/rebase-13.jpg)
 
 
