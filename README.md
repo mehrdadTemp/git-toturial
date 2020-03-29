@@ -1,12 +1,12 @@
 # payvast-ag3-repo
 
-this is a payvasr **AG3** repository 
+this is a payvast **AG3** repository 
 loation is [AG3 Repo](http://localhost:3001/payvast/payvast-ag3-repo)
 
 
 ## git status
 <p dir="rtl" align="right">
-به طور کلی برای درک کلیه دستورات گیت ، می باید با سه مفهوم اصلی <b>Working Directory</b> و <b>Staging Area</b> و  <b>Repository</b> در گیت آشنایی داشته باشید. عکس زیر به خوبی شما را در این امر کمک می کند و می توانید با استفاده از آن، کلیه دستورات گیت را به راحتی درک نمایید.
+به طور کلی برای درک کلیه دستورات گیت ، می باید با سه مفهوم اصلی <b>Working Directory</b> ، <b>StagingArea</b>و  <b>Repository</b>در گیت آشنایی داشته باشید. عکس زیر به خوبی شما را در این امر کمک می کند و می توانید با استفاده از آن، کلیه این سه حالت را گیت درک کنید.
 </p>
 
 ![push image](./images/md/git-commands-3.png)
@@ -17,6 +17,7 @@ loation is [AG3 Repo](http://localhost:3001/payvast/payvast-ag3-repo)
 
 
 1. **staged**
+<p dir="rtl" align="right">بعد از تغییراتی در کد و استفاده از دستور ```git add``` این تغییرات در <b>stage</b> ذخیره می شوند.</p>
 2. **committed**
 3. **modified**
 
@@ -41,11 +42,13 @@ git status
 <p dir="rtl" align="right">
 همانطور که در تصویر زیر مشاهده می کنید مخزن هیچ مورد تغییر یا ویرایشی را در خود ندارد
 </p>
-![push image](./images/md/git-status-1.png)
+
+![git status image (1)](./images/md/git-status-1.png)
 
 <p dir="rtl" align="right">
 حالا فرض کنیدی فایلی به نام main.py را به پروژه اضافه کردید با این کار و بعد انجام دوباره دستور بالا (<b>git status</b>) می بینید که فایل فوق با رنگ <b>قرمز</b> مشخص شده و نشان دهنده این است که این فایل در مخزن محلی قرار دارد (working directory)
 </p>
+
 ![push image](./images/md/git-status-2.png)
 
 
@@ -77,7 +80,7 @@ git add file1.txt file2.txt file3.txt
 </p>
 
 <p dir="rtl" align="right">
-برای افزودنتمام  فایل ها و چوشه های جدید یا ویرایش شده پروژه درstage.از کدی مثل زیر استفاده می شود.
+برای افزودن تمام  فایل ها و پوشه های جدید یا ویرایش شده پروژه در<b>stage</b>.از کدی مثل زیر استفاده می شود.
 </p>
 
 ```
@@ -108,6 +111,39 @@ git push origin master
 ```
 
 ![push image](./images/md/push.png)
+
+
+<p dir="rtl" align="right">
+<h3>نکته</h3>
+</p>
+
+<p dir="rtl" align="right">
+متن درج شده در <b>commit</b> کاملا اختیاری می باشد ولی بهتر است متنی باشد که در مراحل بعد متوجه تغییرات در مخزن شویم. در صورت عدم درج سوییچ –m گیت شما را به صفحه ادیتور پیش فرض که برایش تعریف کرده اید می برد تا در آنجا متن مورد نظر خود را تایپ کنید. در گیت به فرم پیش فرض از ویرایشگر متنی قدرتمند vim استفاده می شود.(در قسمت های پایین در مورد این ادیتور صحبت می شود). برای تایپ در این ادیتور ابتدا دکمه i را زده و ادیتور به حالت ویرایشی می رود بعد از تایپ متن مورد نظر خود دکمه esc را زده و با تایپ عبارت <b>:wqa</b>  (دستورات در vim با : شروع می شوند و هر کلمه معادل یک حرکت خاص می باشد به عنوان مثال w به منظور write کردن متن و q به منظور خروج یا quit استفاده می گردد) از ادیتور متن را ذخیره و خارج می شوید.
+</p>
+
+<p dir="rtl" align="right">
+بعد از تایپ دستور <b>git commit</b>صفحه زیر نمایش داده می شود.
+</p>
+
+![input to vim editor](./images/md/git-new-commit-1.jpg)
+
+<p dir="rtl" align="right">
+برای ورود به مد ویرایش کلمه <b>i</b> را فشار دهید (در قسمت پایین صفحه عبارت – INSERT – نشان دهنده ورود به این مد می باشد). و اقدام به تایپ متن مورد نظر کنید (در بالای صفحه می توان عبارت مورد نظر را مشاهده کرد با رنگ زرد در اینجا شما حتی می توانید comment خود را در چند خط و با enter از هم جدا کنید)
+</p>
+
+![input to insert mode](./images/md/git-new-commit-2.jpg)
+
+<p dir="rtl" align="right">
+در نهایت و بعد از تایپ عبارت مورد نظر کلمه escape در کی برد(دکمه Esc) را فشار داده و عبارت :wqa را تایپ کنید (ماننده پایین صفحه شکل زیر). و در نهایت اقدام به ذخیره با زدن دکمه کنید.
+</p>
+
+![save in vim](./images/md/git-new-commit-3.jpg)
+
+<p dir="rtl" align="right">
+همانطور که در شکل می بینید بعد از برگشت از ادیتور متن مورد نظر در commit درج گردیده است.
+</p>
+
+![back to commit](./images/md/git-new-commit-4.jpg)
 
 
 ## unstage repository
