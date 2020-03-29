@@ -425,6 +425,13 @@ git branch -d mehrdad
 
 ![push image](./images/md/git-merge-4.png)
 
+<p dir="rtl" align="right">
+در صورتی که در شاخه مورد نظر برای حذف موردی باشد که هنوز commit نشده اجازه حذف به شما داده نمی شود در صورت اینکه حتما می خواهید فایل حذف شود از سوییچ –D (بزرگ) استفاده گردد.
+</p>
+
+```
+git branch -D mehrdad
+```
 
 ### نکته
 
@@ -1223,13 +1230,104 @@ No | دستور  |  توضیحات |  تصویر
 3 | ```git reflog``` | <p dir="rtl" align="right">سابقه‌ای از تغییراتی که در Head مخزن محلی صورت گرفته است را نمایش می‌دهد. این دستور برای یافتن موارد حذف شده مفید است.</p> | ![git remove file image](./images/md/best-commands-3.jpg)
 4 | ```git config --global core.editor "atom --wait"``` |  <p dir="rtl" align="right">برای این که اصلا وارد ویرایشگر Vim نشوید، می‌توانید ویرایشگر پیش‌فرض خود را در Git تغییر دهید. برای نمونه برای تغییر ویرایشگر پیش‌فرض به Atom می‌توانید از دستور زیر استفاده کنید:</p> |  <span></span>
 5 | ```git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"``` |  <p dir="rtl" align="right">برای تعریف notepad++ به عنوان ادیتور پیش فرض به جای vim از دستور زیر استفاده کنید</p> |  <span></span>
-5 | ```git diff branch1...branch2``` <br /> ```git diff branch1:file1  branch2:file1``` | <p dir="rtl" align="right">برای گرفتن اختلاف بین 2 شاخه مثلا master و mehrdad از کدی شبیه  ```git diff master…mehrdad``` استفاده می کنیم. (بین 2 نام شاخه 3 عدد نقطه قرار می دهیم). و برای گرفتن تفاوت بین یک فایل مشخص در 2 شاخه از علامت :  بین نام شاخه و نام فایل استفاده می شود (branch_name:file_name) . فرض کنید فایلی به نام main.py داریم حال برای مشاهده اختلاف از دستور ```git diff master:main.py  mehrdad:main.py``` استفاده می شود.</p> | ![git remove file image](./images/md/best-commands-4.jpg) 
+6 | ```git diff branch1...branch2``` <br /> ```git diff branch1:file1  branch2:file1``` | <p dir="rtl" align="right">برای گرفتن اختلاف بین 2 شاخه مثلا master و mehrdad از کدی شبیه  ```git diff master…mehrdad``` استفاده می کنیم. (بین 2 نام شاخه 3 عدد نقطه قرار می دهیم). و برای گرفتن تفاوت بین یک فایل مشخص در 2 شاخه از علامت :  بین نام شاخه و نام فایل استفاده می شود (branch_name:file_name) . فرض کنید فایلی به نام main.py داریم حال برای مشاهده اختلاف از دستور ```git diff master:main.py  mehrdad:main.py``` استفاده می شود.</p> | ![git remove file image](./images/md/best-commands-4.jpg) 
 
 
-git rev-parse –abbrev-rev HEAD
 
 # Conflict
 
+<p dir="rtl" align="right">
+برای معرفی conflict و روش برطرف کردن آن با مثالی این مورد را بررسی می کنیم. فرض کنید فایل با نام file.txt را در شاخه master ایجاد کرده اید. و در ویرایش مقدار hello world را در آن درج کرده اید.در نهایت نیز این فایل را commit  می کنیم.
+</p>
 
 
+![git remove file image](./images/md/conflict-1.jpg)
+
+![git remove file image](./images/md/conflict-2.jpg)
+
+```
+git add file.txt
+git commit -m "create file.txt"
+```
+
+<p dir="rtl" align="right">
+حال شاخه جدیدی به نام feature/mehrdad را ایجاد کرده و در آن اقدام به ویرایش فایل file.txt مطابق با شکل های زیر می کنیم.
+</p>
+
+```
+git checkout -b  feature/mehrdad
+```
+
+![git remove file image](./images/md/conflict-3.jpg)
+
+![git remove file image](./images/md/conflict-4.jpg)
+
+<p dir="rtl" align="right">
+حالا در اینجا در شاخه feature/mehrdad اقدام به commit کردن کرده و دوباره به شاخه master باز می گردیم.
+</p>
+
+```
+git checkout master
+```
+
+![git remove file image](./images/md/conflict-5.jpg)
+
+<p dir="rtl" align="right">
+و بعد از اعمال تغییرات جدید بر روی فایل file.txt می پردازیم و بعد از commit تغییرات. حال اگه اقدام به merge کردن با شاخه feature/mehrdad کنیم  با conflict  مواجه می شویم.
+</p>
+
+
+![git remove file image](./images/md/conflict-6.jpg)
+
+![git remove file image](./images/md/conflict-7.jpg)
+
+![git remove file image](./images/md/conflict-8.jpg)
+
+<p dir="rtl" align="right">
+بعد از اجرای دستور زیر با conflict مواجه می شویم.
+</p>
+
+```
+git merge feature/mehrdad
+```
+
+<p dir="rtl" align="right">
+همونطور که مشاهده میکنید بعد از اجرا کردن این دستور،git  تلاش میکنه که بصورت اتوماتیک تغییرات file.txt رو ادغام یا merge کنه. ولی بخاطر اینکه هم در شاخه master و هم در شاخه feature/mehrdad تغییراتی بر روی یک خط از یک فایل داده شده است، git  نمیدونه کدوم مورد رو در نظر بگیره و به همین دلیل merge بصورت کامل انجام نمیشه.در اینجا هست که وارد حالت MERGING میشیم و به همین دلیل هم شاخه master به master|MERGING تبدیل میشه و به این معنی هست که شما باید conflictها رو برطرف کنید و مجددا commit رو اجرا کنید.مطابق شکل زیر
+</p>
+
+![git remove file image](./images/md/conflict-9.jpg)
+
+<p dir="rtl" align="right">
+حال فایل file.txt را جهت ویرایش باز می کنیم
+</p>
+
+![git remove file image](./images/md/conflict-10.jpg)
+
+<p dir="rtl" align="right">
+کدهایی که بین خط ```<<<<<< HEAD```  و  ```=======```قرار دارند، کدهایی هستند که در شاخه فعلی یا master  قرار دارند و کدهایی که بین    ```=======``` و    ```>>>>>>> feature/mehrdad```وجود دارد، کدهایی هستند که در شاخه feature/mehrdad قرار داشته‌اند. این دو خط همان دو خطی هستند که conflict در آنها رخ داده است.شما باید بین این دو کد یکی رو انتخاب کنید و دیگری رو بصورت دستی حذف کنید. همچنین میتونین بسته به شرایط پروژتون، هر دو مورد رو حذف یا هر دو مورد رو نگه دارید. 
+</p>
+
+![git remove file image](./images/md/conflict-11.jpg)
+
+<p dir="rtl" align="right">
+حال فایل را تغییر داده و ذخیره می کنیم مطابق شکل زیر
+</p>
+
+![git remove file image](./images/md/conflict-12.jpg)
+
+<p dir="rtl" align="right">
+خب تا اینجا merge conflict رو برطرف کردیم و حالا اگر merge conflict دیگری هم وجود داشته باشه، باید اونا رو هم به همین صورت برطرف کنیم. زمانی که همه merge conflictها رو برطرف کردید، باید دستور git commit رو اجرا کنید تا تغییرات مورد نظر انجام بشه و merge بصورت کامل انجام بشه و از حالت MERGING خارج بشیم.و دوباره به شاخه master برگردیم مطابق با شکل زیر
+</p>
+
+```
+git add file.txt &&  git commit -m "merge conflict"
+```
+
+![git remove file image](./images/md/conflict-13.jpg)
+
+<p dir="rtl" align="right">
+با اجرای این دستور به شاخه master باز می گردیم
+</p>
+
+![git remove file image](./images/md/conflict-14.jpg) 
 
