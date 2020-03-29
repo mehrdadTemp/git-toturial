@@ -134,7 +134,7 @@ git push origin master
 ![input to insert mode](./images/md/git-new-commit-2.jpg)
 
 <p dir="rtl" align="right">
-در نهایت و بعد از تایپ عبارت مورد نظر کلمه escape در کی برد(دکمه Esc) را فشار داده و عبارت :wqa را تایپ کنید (ماننده پایین صفحه شکل زیر). و در نهایت اقدام به ذخیره با زدن دکمه کنید.
+در نهایت و بعد از تایپ عبارت مورد نظر کلمه escape در کی برد(دکمه Esc) را فشار داده و عبارت :wqa را تایپ کنید (ماننده پایین صفحه شکل زیر). و در نهایت اقدام به ذخیره با زدن دکمه Enter کنید.
 </p>
 
 ![save in vim](./images/md/git-new-commit-3.jpg)
@@ -149,10 +149,7 @@ git push origin master
 ## unstage repository
 
 <p dir="rtl" align="right">
-می‌توانید به سادگی فایل‌ها را از قسمت stage نیز حذف کنید
-
-<br />
-برای این کار باید از دستور زیر استفاده شود
+می‌توانید به سادگی فایل‌ها را از قسمت stage نیز حذف کنید(ممکن است به اشتباه فایلی را به stage با دستور git add ارسال کرده باشید) برای این کار باید از دستور زیر استفاده شود.(در اینجا منظور از filename نام فایل مورد نظر می باشد)
 </p>
 
 ```
@@ -310,8 +307,25 @@ git log --graph --pretty=format:'%Cred%h%Creset -%C(green)%d%Creset %s %Cgreen(%
 
 ![push image](./images/md/git-log-8.png)
 
+No | command | Description
+------------ | ------------- | -------------
+1  | %n | ایجاد یک خط جدید 
+2  | %% | نمایش کاراکتر %
+3  | %Cred | تغییر رنگ به قرمز
+4  | %Cgreen | تغییر رنگ به سبز
+5  | %Cblue | تغییر رنگ به آبی
+6  | %Creset | پاک کردن رنگ
+7  | %T | نمایش به فرم درختی
+8  | %an | نام اقدام کننده commit
+9  | %ae | نمایش ایمیل اقدام کننده به commit
+10  | %ad | تاریخ commit
+11  | %as | نمایش تاریخ کوتاه commit 
 
-### git log commands
+[git format](https://git-scm.com/docs/pretty-formats)
+
+
+
+### خلاصه دستورات لاگ در گیت
 
 No | Git Log Command | Description
 ------------ | ------------- | -------------
