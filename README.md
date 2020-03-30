@@ -160,12 +160,15 @@ git --version
 </p>
 
 
-
-
 1. **staged**
-<p dir="rtl" align="right">بعد از تغییراتی در کد و استفاده از دستور ```git add``` این تغییرات در <b>stage</b> ذخیره می شوند.</p>
 2. **committed**
 3. **modified**
+
+### stage
+
+<p dir="rtl" align="right">
+بعد از تغییراتی در کد و استفاده از دستور ```git add``` این تغییرات در <b>stage</b> ذخیره می شوند.
+</p>
 
 
 <p dir="rtl" align="right">
@@ -841,6 +844,10 @@ git gui
 
 
 # gitk   vs  git gui
+
+<p dir="rtl" align="right">
+در حالی که gitk  به پیمایش و نمایش تاریخچه یک مخزن می پردازد ، git gui  به پالایش شخصی commit  و سابقه پروژه می پردازد
+</p> 
 
 ## مزایای git gui
 1. راحتی در commit
@@ -1616,6 +1623,42 @@ git diff --name-only --diff-filter=U
 No | خطا  |  توضیحات 
 ------------ | ------------- | ------------ 
 1 | ```Please commit your changes or stash them before you switch branches. Aborting``` |   <p dir="rtl" align="right">دلیل این خطا این است که .شما نمی توانید با تغییرات محلی ادغام شویدبرای رفع این مشکل شما 3 انتخاب دارید.<ul><li><p dir="rtl" align="right">تغییرات خود را commit کنید مطابق دستور ```git commit –m “my message”``` </li></p><li><p dir="rtl" align="right">ذخیره کردن(stash) . در حقیقت عملیات stashing مثل یک پشته عمل می کند(در بالا توضیح داده شد). و تغییرات را ماننده پشته به ترتیب معکوس در آن قرار دهید (push).برای این کار ابتدا تایپ کنید ``` git stash ```  و بعد برای درج (pull) در stash دستور ``` git stash pop ``` را تایپ کنید</p></li><li><p dir="rtl" align="right"><b>صرفنظر از تغییرات محلی: </b>برای اینکه تغییرات خود را لغو کنید یا دستور ``` git reset --hard ``` را وارد کنید و یا دستور  ``` git checkout –t –f filename ``` برای لغو تغییرات فایل مورد نظر (filename هم نام فایل مشخص است)</p></li></ul></p>
+
+
+
+# git mergetool
+
+<p dir="rtl" align="right">
+فرض کنید که دو شاخه master و feature/mehrdad در فایلی به نام test.txt مشکل دارند.و دچار conflict شده اند. برای دیدن ای مشکل از mergetool استفاده می شود.
+</p>
+
+![git remove file image](./images/md/mergetool-1.jpg)
+
+```
+git mergetool
+```
+
+<p dir="rtl" align="right">
+با تایپ این دستور در bash صفحه ای مطابق شکل زیر باز می گردد. که دارای 3 بخش است 2 بخش کنار شاخه های هستند که دچار conflict شده اند و برای همین فایل می باشند. و قسمت مرکز هم مربوط به شاخه master|MERGE که دچار تناقض شده است . این دقیقا همان ادیتور vim می باشد و شما با تایپ کلمه i می توانید اقدام به تغییر فایل مرکزی کرده و بعد از رفع مشکل آنرا ذخیره کنید (زدن دکمه esc و تایپ :wqa برای خروج)
+</p>
+
+![git remove file image](./images/md/mergetool-2.jpg)
+
+### نکته
+
+<p dir="rtl" align="right">
+در شکل می توان هر 3 بخش را تغییر داد قسمتی که در زیر آن خط نوار سفید وجود دارد فعال می باشد (پیش فرض قسمت مرکز) و برای تغییر فایل فعال باید از کلمات ترکیبی ctrl + w تا بین این 3 بخش سوییچ کرد و با زدن دکمه i وارد حالت ویرایش گردید.
+</p>
+
+<p dir="rtl" align="right">
+ویرایشگرmergetool پیش فرض vimdiff می باشد که در صورت عدم آن با اجرای دستورات زیر به عنوان پیش فرض برای گیت شناخته می شود.
+</p>
+
+```
+git config --global merge.tool vimdiff
+git config --global merge.conflictstyle diff3
+git config --global mergetool.prompt false
+```
 
 
 
