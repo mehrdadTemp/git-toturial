@@ -4,6 +4,150 @@ this is a payvast **AG3** repository
 loation is [AG3 Repo](http://localhost:3001/payvast/payvast-ag3-repo)
 
 
+
+# نصب گیت در ویندوز 
+
+<p dir="rtl" align="right">
+جهت نصب گیت در ویندوز ابتدا به سایت <a href="http://git-scm.com">گیت</a> رفته و از پنل دانلود ها گیت برای ویندوز را دانلود کنید.مطابق تصویر زیر.
+</p>
+
+![install git in windows image 1](./images/md/install-git-1.jpg)
+
+<p dir="rtl" align="right">
+مجوز عمومی گنو را مرور کنید و وقتی آماده نصب شدید ، روی Next کلیک کنید
+</p>
+
+![install git in windows image 2](./images/md/install-git-2.jpg)
+
+<p dir="rtl" align="right">
+گیت محل نصب را از شما درخواست می کند. محل نصب پیش فرض در Program File می باشد(بهتر است در همین مکان بماند) و در صورت علاقه به تغییر آن محل مورد نظر خود را انتخاب کرده و روی Next کلیک کنید.
+</p>
+
+![install git in windows image 3](./images/md/install-git-3.jpg)
+
+<p dir="rtl" align="right">
+صفحه انتخاب مؤلفه (component selection) ظاهر می شود. پیش فرض ها را رها کنید مگر اینکه نیاز خاصی به تغییر آنها داشته باشید و روی Next کلیک کنید.
+</p>
+
+![install git in windows image 4](./images/md/install-git-4.jpg)
+
+<p dir="rtl" align="right">
+نصب کننده می خواهد پوشه منوی شروع (start menu folder) را ایجاد کند. بر روی Next کلیک کنید.
+</p>
+
+![install git in windows image 5](./images/md/install-git-5.jpg)
+
+
+<p dir="rtl" align="right">
+ویرایشگر متنی را که می خواهید با Git استفاده کنید انتخاب کنید.(در محیط bash برای کارهای مختلف متنی) از منوی کشویی هر ویرایشگر متنی که ترجیح می دهید را انتخاب کنید بهتر است به فرم پیش فرض همان ویرایشگر قدرتمند vim باشد(توضیح داده خواهد شد) ولی می توانید ویرایش گرهای دیگری مثل notepad++ را هم برای استفاده انتخاب کنید (مانند شکل) و Next را بزنید.
+</p>
+
+![install git in windows image 6](./images/md/install-git-6.jpg)
+
+<p dir="rtl" align="right">
+این مرحله نصب به شما امکان می دهد محیط PATH را تغییر دهید.  PATH  مجموعه پیش فرض دایرکتوری ها است که هنگام اجرای یک دستور از خط فرمان ، شامل می شود. (هر دستوری که در گیت انجام می شود یک فایل اجرای در این محیط و پوشه دارد) این گزینه را در قسمت وسط (توصیه شده) بگذارید "Git From the command line and also from 3rd-party software"و روی Next کلیک کنید
+</p>
+
+![install git in windows image 7](./images/md/install-git-7.jpg)
+
+
+<h3>
+<p dir="rtl" align="right">
+شبیه سازهای ترمینال
+</p>
+</h3>
+
+<p dir="rtl" align="right">
+این قسمت مربوط به گواهینامه های سرور است. بیشتر کاربران باید از پیش فرض استفاده کنند(پیش فرض)  .گر در یک محیط Active Directory  کار می کنید ، ممکن است لازم باشد به گواهی های Windows Store تغییر دهید. روی Next کلیک کنید
+</p>
+
+![install git in windows image 8](./images/md/install-git-8.jpg)
+
+<p dir="rtl" align="right">
+مرحله بعدی line ending را مشخص می کند. توصیه می شود که انتخاب پیش فرض را قبول کنید (“Checkout Windows-style, commit Unix-style line endings”). این مربوط به نحوه شکل گیری داده ها و تغییر این گزینه ممکن است باعث ایجاد مشکلاتی شود. روی Next کلیک کنید
+</p>
+
+![install git in windows image 9](./images/md/install-git-9.jpg)
+
+
+<p dir="rtl" align="right">
+در مرحله بعدی شبیه ساز ترمینال مورد نظر خود را انتخاب کنید. پیش فرض برای ویژگی های آن توصیه می شود.( MinTTY ) و سپس روی Next  کلیک کنید
+</p>
+
+![install git in windows image 10](./images/md/install-git-10.jpg)
+
+
+<h3>
+<p dir="rtl" align="right">
+گزینه های اضافی سفارشی سازی
+</p>
+</h3>
+
+<p dir="rtl" align="right">
+گزینه های پیش فرض توصیه می شود ، اما این مرحله به شما امکان می دهد تصمیم بگیرید کدام گزینه اضافی را که می خواهید فعال کنید. اگر از پیوندهای نمادین استفاده می کنید ، که مانند میانبرهای خط فرمان است ، کادر را تیک بزنید(Enable symbolic links). و بعد روی Next کلیک کنید
+</p>
+
+![install git in windows image 11](./images/md/install-git-11.jpg)
+
+<p dir="rtl" align="right">
+بسته به نسخه Git شما در حال نصب هستید ، ممکن است نصب ویژگی های آزمایشی را ارائه دهد.  گزینه گنجاندن گزینه های تعاملی ارائه شد. آن را بدون تیک رها کنید و روی نصب کلیک کنید. تا فرایند نصب گیت آغاز گردد.
+</p>
+
+![install git in windows image 12](./images/md/install-git-12.jpg)
+
+<p dir="rtl" align="right">
+بعد از نصب روی دکمه finish کلیک کنید
+</p>
+
+![install git in windows image 12](./images/md/install-git-13.jpg)
+
+### congratulation
+
+<h3>
+<p dir="rtl" align="right">
+نحوه راه اندازی Git در ویندوز
+</p>
+</h3>
+
+<p dir="rtl" align="right">
+برای راه اندازی Git Bash ، منوی Windows Start را باز کنید ، git bash  را تایپ کنید و Enter را فشار دهید.
+</p>
+
+
+![install git in windows image 14](./images/md/install-git-14.jpg)
+
+![install git in windows image 15](./images/md/install-git-15.jpg)
+
+<p dir="rtl" align="right">
+برای راه اندازی Git GUI  (بعدا در مورد git gui  صحبت می کنیم) ، منوی Windows Start را باز کنید ، git gui   را تایپ کنید و Enter را فشار دهید.
+</p>
+
+![install git in windows image 16](./images/md/install-git-16.jpg)
+
+![install git in windows image 17](./images/md/install-git-17.jpg)
+
+
+<p dir="rtl" align="right">
+برای راه اندازی gitk که یک واسط گرافیکی (ویزارد) دیگر برای گیت می باشد هم منوی Windows Start را باز کنید ، gitk   را تایپ کنید و Enter را فشار دهید.
+</p>
+
+![install git in windows image 19](./images/md/install-git-19.jpg)
+
+![install git in windows image 20](./images/md/install-git-20.jpg)
+
+
+<p dir="rtl" align="right">
+در محیط git bash برای تست درست کار کردن آن 2 دستور زیر را که برای نمایش مکان ذخیره شدن برنامه git  (which git) و ورژن برنامه git می باشد را اجرا می کنیم.
+</p>
+
+```
+which git
+git --version
+```
+
+![install git in windows image 18](./images/md/install-git-18.jpg)
+
+
 ## git status
 <p dir="rtl" align="right">
 به طور کلی برای درک کلیه دستورات گیت ، می باید با سه مفهوم اصلی <b>Working Directory</b> ، <b>StagingArea</b>و  <b>Repository</b>در گیت آشنایی داشته باشید. عکس زیر به خوبی شما را در این امر کمک می کند و می توانید با استفاده از آن، کلیه این سه حالت را گیت درک کنید.
@@ -14,6 +158,8 @@ loation is [AG3 Repo](http://localhost:3001/payvast/payvast-ag3-repo)
 <p dir="rtl" align="right">
 سه وضعیت کلی در پروژه‌های گیت وجود دارد که شامل موارد زیر می‌شود:
 </p>
+
+
 
 
 1. **staged**
@@ -976,33 +1122,7 @@ git merge FETCH_HEAD
 
 <p dir="rtl" align="right">
 به طور دقیق تر ، pull ، سر شاخه بازیابی شده را به شاخه فعلی ادغام کند. با استفاده از سوییچ --rebase ، به جای ادغام git ، بازگرداندن (rebase)  git را اجرا می کند.(به زودی در مورد دستور rebase صحبت می کنیم)
-</p>
-
-
-
-# rm
-
-<p dir="rtl" align="right">
-این دستور برای حذف فایل ها از درخت جاری در گیت استفاده می شود. در نمونه زیر مشاهده می شود که 3 فایل package1.py ، package2.py و package3.py به طور همزمان از مخزن محلی حذف شدند.
-</p>
-
-```
-git rm package{2..4}.py
-```
-
-![git remove file image](./images/md/git-rm.png)
-
-### نکته
-
-<p dir="rtl" align="right">
-برای حذف یک پوشه نیز از سوییچ –r  استفادی می گردد به عنوان مثال اگر در مخزن خود پوشه ای با نام newFolder دارید برای حذف آن از دستور زیر استفاده گردد.
-</p>
-
-```
-git rm -r --cached newFolder
-```  
-
-
+</p> 
 
 
 # rebase
@@ -1264,9 +1384,29 @@ No | دستور  |  توضیحات |  تصویر
 5 | ```git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"``` |  <p dir="rtl" align="right">برای تعریف notepad++ به عنوان ادیتور پیش فرض به جای vim از دستور زیر استفاده کنید</p> |  <span></span>
 6 | ```git diff branch1...branch2``` <br /> ```git diff branch1:file1  branch2:file1``` | <p dir="rtl" align="right">برای گرفتن اختلاف بین 2 شاخه مثلا master و mehrdad از کدی شبیه  ```git diff master…mehrdad``` استفاده می کنیم. (بین 2 نام شاخه 3 عدد نقطه قرار می دهیم). و برای گرفتن تفاوت بین یک فایل مشخص در 2 شاخه از علامت :  بین نام شاخه و نام فایل استفاده می شود (branch_name:file_name) . فرض کنید فایلی به نام main.py داریم حال برای مشاهده اختلاف از دستور ```git diff master:main.py  mehrdad:main.py``` استفاده می شود.</p> | ![git remove file image](./images/md/best-commands-4.jpg) 
 
+# rm
 
+<p dir="rtl" align="right">
+این دستور برای حذف فایل ها از درخت جاری  (مخزن محلی و شاخه مشخص) در گیت استفاده می شود. در نمونه زیر مشاهده می شود که 3 فایل package1.py ، package2.py و package3.py به طور همزمان از مخزن محلی حذف شدند.
+</p>
 
-# Stash
+```
+git rm package{2..4}.py
+```
+
+![git remove file image](./images/md/git-rm.png)
+
+### نکته
+
+<p dir="rtl" align="right">
+برای حذف یک پوشه نیز از سوییچ –r  استفادی می گردد به عنوان مثال اگر در مخزن خود پوشه ای با نام newFolder دارید برای حذف آن از دستور زیر استفاده گردد.
+</p>
+
+```
+git rm -r --cached newFolder
+```   
+
+# stash
 
 <p dir="rtl" align="right">
 در حقیقت برای برگرداندن مخزن محلی خود (و در شاخه جاری مثلا master) به آخرین commit که انجام داده ایم (حذف تغییرات خودمان) از دستور زیر استفاده می کنیم.
@@ -1282,7 +1422,7 @@ git stash
 # clean
 
 <p dir="rtl" align="right">
-هدف از clean حذف فایل‌های ردگیری نشده (untracked files) از مخزن محلی می باشد.به صورت واضح تر فایل های که تا به حال به مخزن ریموت ارسال نشده اند و فقط در مخزن محلی ایجاد گردیده اند را فایل های ردگیری نشده گویند. به صورت پیش‌فرض فایل‌های ردگیری نشده از سوی gitignore. حذف نخواهند شد؛ اما این رفتار را می‌توان تغییر داد
+هدف از clean حذف فایل‌های ردگیری نشده (untracked files) از مخزن محلی می باشد. به بیان واضح تر فایل های که تا به حال به stage (با دستور git add ) اضافه نشده اند و فقط در مخزن محلی ایجاد گردیده اند را فایل های ردگیری نشده گویند. به صورت پیش‌فرض فایل‌های ردگیری نشده از سوی gitignore. حذف نخواهند شد. اما این حالت را می‌توان تغییر داد!
 </p>
 
 ```
@@ -1292,8 +1432,8 @@ git clone
 # سوییچ های مهم این دستور
 No | سوییچ  |  توضیحات  
 ------------ | ------------- | ------------ 
-1 | -n  |   یک اجرای آزمایشی پیش از حذف کردن هر چیزی است
-2 | -f  |   حذف واقعی فایل‌ها
+1 | -n  |   <p dir="rtl" align="right">یک اجرای آزمایشی پیش از حذف کردن هر چیزی است. در حقیقت برای اینکه ببینید چه چیزی را دارید حذف می کنید از این سوییچ استفاده می گردد</p>
+2 | -f  |   <p dir="rtl" align="right">حذف واقعی فایل‌ها</p>
 3 | -d  |   <p dir="rtl" align="right">حذف دایرکتوری‌های ردگیری نشده.  در حقیقت اگر در گیت از مسیر مشخصی برای حذف استفاده نشده باشد. فایل های داخل پوشه های که untracked هستند حذف نمی شوند برای این مشکل ما از این سوییچ –d  استفاده می کنیم تا کلیه فایل ها و پوشه های untrack را از مخزن محلی پاک کنیم</p>
 
 <p dir="rtl" align="right">
@@ -1306,7 +1446,59 @@ git clean -f
 
 ![git clean untracked files](./images/md/clean-1.jpg)
 
-[git clone](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clean.html)
+### نکته
+
+<p dir="rtl" align="right">
+برای این که درخت کاری(مخزن و شاخه جاری) تمیز بماند، باید دستور زیر را اجرا کنید. این دستور همه فایل‌ها و پوشه های که از سوی git ردگیری نمی‌شوند را حذف می‌کند.
+</p>
+
+```
+git clean -df
+```
+
+<p dir="rtl" align="right">
+و اگر می‌خواهید پیش از حذف ببینید که کدام فایل‌های ردگیری نشده حذف خواهند شد، در این صورت می‌توانید دستور زیر را اجرا کنید.
+</p>
+
+```
+git clean –dn
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+اگر بخواهیم برخی فایل‌ها را حذف کنیم، فایل‌های ردگیری‌شده را می‌توان با استفاده از این دستور حذف کرد
+</p>
+
+```
+git rm file-path
+```
+
+<p dir="rtl" align="right">
+file-path  هم مسیر و نام فایل حذفی می باشد (برای حذف بیش از یک فایل با جای خالی آنها را از هم جدا کنید.
+</p>
+
+### نکته
+
+<p dir="rtl" align="right">
+اگر فایل شما در محیط staging باشد، در این صورت باید فلگ force را نیزبه آن اضافه کنید مانند دستور زیر.
+</p>
+
+```
+git rm file-path -f
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+اگر بخواهید فایل‌های خاصی را از مخزن git حذف کنید. اما روی سیستم شما(مخزن محلی) همچنان باقی بمانند ، در این صورت می‌توانید دستور زیر را اجرا کنید.
+</p>
+
+```
+git rm --cached file-path
+```
+
+[git clone](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clean.html) 
 
 # Conflict
 
