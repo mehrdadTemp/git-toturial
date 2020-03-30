@@ -210,6 +210,29 @@ git status
 ![push image](./images/md/git-status-2.png)
 
 
+# init
+
+<p dir="rtl" align="right">
+برای ساخت یک مخزن محلی یک پوشه خالی ساخته و در داخل آن با کلیک راست از منوی ظاهر شده قسمت “Git Bash Here” را انتخاب کرده. مطابق شکل زیر
+</p>
+
+
+![git status image (1)](./images/md/git-init-1.jpg)
+
+<p dir="rtl" align="right">
+در مرحله بعدی برای ساخت یک مخزن خالی توسط دستور git init اقدام به این کار می کنیم مطابق شکل زیر.
+</p>
+
+```
+git init
+```
+
+![push image](./images/md/git-init-2.jpg)
+
+<p dir="rtl" align="right">
+بعد از انجام اینکار یک پوشه به نام .init در پوشه ایجاد می شود که وظیفه نگهداری اطلاعات مخزن را دارد و به هیچ وجه این پوشه را دست نزنید.
+</p>
+
 ## stage
 <p dir="rtl" align="right">
 در این مرحله می خواهیم فایل ایجاد شده را در <b>stage</b> قرار دهیم. برای این منظور باید از دستور زیر استفاده کنیم.
