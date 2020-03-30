@@ -339,6 +339,38 @@ No | Git Log Command | Description
 8 | ```git log --graph --pretty=format:'%Cred%h%Creset -%C(green)%d%Creset %s %Cgreen(%cr) %C(bold red)<%an>%Creset' --abbrev-commit``` | Show log with pretty format
 
 
+# clone
+
+<p dir="rtl" align="right">
+یعنی یک مخزن (repository) را دقیقا مشابهش را روی سیستم خود بسازید.و البته دسترسی به فایل ها ،  commit های قبلی در مخزن و ... برای این کار در git از دستوری مشابه زیر استفاده می شود.
+</p>
+
+```
+git clone repo_address
+```
+
+![push image](./images/md/clone-1.jpg)
+
+```
+git clone https://github.com/mehrdadTemp/git-toturial.git
+```
+
+### نکته
+
+<p dir="rtl" align="right">
+جهت دریافت تغییرات کاربران دیگر از مخزن اصلی هم از دستور زیر استفاده می گردد.
+</p>
+
+```
+git pull origin master
+```
+
+<p dir="rtl" align="right">
+البته بجای master می توان نام شاخه مورد نظر را درج کرد
+</p>
+
+
+
 
 # شاخه (Branch)
 <p dir="rtl" align="right">
@@ -1234,6 +1266,48 @@ No | دستور  |  توضیحات |  تصویر
 
 
 
+# Stash
+
+<p dir="rtl" align="right">
+در حقیقت برای برگرداندن مخزن محلی خود (و در شاخه جاری مثلا master) به آخرین commit که انجام داده ایم (حذف تغییرات خودمان) از دستور زیر استفاده می کنیم.
+</p>
+
+```
+git stash
+``` 
+
+[git stash](https://git-scm.com/docs/git-stash)
+
+
+# clean
+
+<p dir="rtl" align="right">
+هدف از clean حذف فایل‌های ردگیری نشده (untracked files) از مخزن محلی می باشد.به صورت واضح تر فایل های که تا به حال به مخزن ریموت ارسال نشده اند و فقط در مخزن محلی ایجاد گردیده اند را فایل های ردگیری نشده گویند. به صورت پیش‌فرض فایل‌های ردگیری نشده از سوی gitignore. حذف نخواهند شد؛ اما این رفتار را می‌توان تغییر داد
+</p>
+
+```
+git clone
+```
+
+# سوییچ های مهم این دستور
+No | سوییچ  |  توضیحات  
+------------ | ------------- | ------------ 
+1 | -n  |   یک اجرای آزمایشی پیش از حذف کردن هر چیزی است
+2 | -f  |   حذف واقعی فایل‌ها
+3 | -d  |   <p dir="rtl" align="right">حذف دایرکتوری‌های ردگیری نشده.  در حقیقت اگر در گیت از مسیر مشخصی برای حذف استفاده نشده باشد. فایل های داخل پوشه های که untracked هستند حذف نمی شوند برای این مشکل ما از این سوییچ –d  استفاده می کنیم تا کلیه فایل ها و پوشه های untrack را از مخزن محلی پاک کنیم</p>
+
+<p dir="rtl" align="right">
+برای توضیحات بیشترفرض کنید فایلی به نام test.py را ساخته(فایل کاملا  جدید) و آنرا ویرایش کرده اید. حالا اگر از دستور زیر استفاده کنید ملاحظه می شود که این فایل به فرم کامل از مخزن محلی حذف گردیده است.(untracked file) 
+</p>
+
+```
+git clean -f
+```
+
+![git clean untracked files](./images/md/clean-1.jpg)
+
+[git clone](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clean.html)
+
 # Conflict
 
 <p dir="rtl" align="right">
@@ -1330,4 +1404,26 @@ git add file.txt &&  git commit -m "merge conflict"
 </p>
 
 ![git remove file image](./images/md/conflict-14.jpg) 
+
+### نکته
+
+<p dir="rtl" align="right">
+برای مشاهده لیست conflict ها (فایل های دارای تداخل) در گیت وقتی به حالت MERGING وارد می شوید از دستور زیر استفاده کنید.
+</p>
+
+```
+git diff --name-only --diff-filter=U
+```
+
+![git remove file image](./images/md/conflict-15.jpg) 
+
+
+### چند خطای مهم در گیت
+
+
+No | خطا  |  توضیحات 
+------------ | ------------- | ------------ 
+1 | ```Please commit your changes or stash them before you switch branches. Aborting``` |   <p dir="rtl" align="right">دلیل این خطا این است که .شما نمی توانید با تغییرات محلی ادغام شویدبرای رفع این مشکل شما 3 انتخاب دارید.<ul><li><p dir="rtl" align="right">تغییرات خود را commit کنید مطابق دستور ```git commit –m “my message”``` </li></p><li><p dir="rtl" align="right">ذخیره کردن(stash) . در حقیقت عملیات stashing مثل یک پشته عمل می کند(در بالا توضیح داده شد). و تغییرات را ماننده پشته به ترتیب معکوس در آن قرار دهید (push).برای این کار ابتدا تایپ کنید ``` git stash ```  و بعد برای درج (pull) در stash دستور ``` git stash pop ``` را تایپ کنید</p></li><li><p dir="rtl" align="right"><b>صرفنظر از تغییرات محلی: </b>برای اینکه تغییرات خود را لغو کنید یا دستور ``` git reset --hard ``` را وارد کنید و یا دستور  ``` git checkout –t –f filename ``` برای لغو تغییرات فایل مورد نظر (filename هم نام فایل مشخص است)</p></li></ul></p>
+
+
 
