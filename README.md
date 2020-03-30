@@ -10,8 +10,9 @@ this is a payvast **AG3** repository
 loation is [AG3 Repo](http://localhost:3001/payvast/payvast-ag3-repo)
 
 
-
-# نصب گیت در ویندوز 
+<h2>
+	<p dir="rtl" align="right">نصب گیت در ویندوز</p>
+</h2>
 
 <p dir="rtl" align="right">
 جهت نصب گیت در ویندوز ابتدا به سایت <a href="http://git-scm.com">گیت</a> رفته و از پنل دانلود ها گیت برای ویندوز را دانلود کنید.مطابق تصویر زیر.
